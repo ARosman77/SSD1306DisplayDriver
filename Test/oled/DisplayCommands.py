@@ -87,3 +87,23 @@ def cmdSetRowOffset(offset):
         raise ValueError("Offset from 0 to 63 supported!")
     sendCmd(0xD3,offset)
 
+def cmdSetColAddr(colStart,colEnd):
+    """ Setup column start and end address for horizontal/vertical mode """
+    if (colStart<0) or (colStart>127):
+        raise ValueError("Column Start only valid from 0 to 127")
+    if (colEnd<0) or (colEnd>127):
+        raise ValueError("Column End only valid from 0 to 127")
+    if (colStart>colEnd):
+        raise ValueError("Column End must be greater then Column Start")
+    sendCmd(0x21,colStart,colEnd)
+
+def cmdSetPageAddr(pageStart,pageEnd):
+    """ Setup page start and end address for horizontal/vertical mode """
+    if (pageStart<0) or (pageStart>7):
+        raise ValueError("Page Start only valid from 0 to 7")
+    if (pageEnd<0) or (pageEnd>7):
+        raise ValueError("Page End only valid from 0 to 7")
+    if (pageStart>pageEnd):
+        raise ValueError("Page End must be greater then Page Start")
+    sendCmd(0x22,pageStart,pageEnd)
+

@@ -25,3 +25,5 @@ from DisplayCommands import cmdRemapCol
 from DisplayCommands import cmdSetMuxRatio
 from DisplayCommands import cmdRemapRow
 from DisplayCommands import cmdSetRowOffset
+from DisplayCommands import cmdSetColAddr
+from DisplayCommands import cmdSetPageAddr
