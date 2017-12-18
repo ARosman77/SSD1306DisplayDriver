@@ -8,8 +8,6 @@ from pyA20 import i2c
 
 def init(interface,addr):
     """ Initalize i2c interface """
-    print "Init communication on i2c-"+str(interface)+" and address "+str(addr)+"."
-    # Initialize i2c bus
     i2c.init("/dev/i2c-"+str(interface))
     i2c.open(addr)
 
@@ -24,5 +22,12 @@ def sendData(data, *moreData):
     """ send data to oled RAM """
     output = [0x40,data]
     for mData in moreData:
+        output.append(mData)
+    i2c.write(output)
+
+def sendDataL(listData):
+    """ send data to oled RAM """
+    output = [0x40]
+    for mData in listData:
         output.append(mData)
     i2c.write(output)
