@@ -48,10 +48,17 @@ oled.cmdSetCurPage(2)
 oled.cmdSetCurCol(0)
 oled.cmdSetAddrMode(oled.ADDR_MODE_PAGE)
 oled.printBluLn("UPCOMING EPISODES:",0,0)
-oled.printBluLn("+2 Gray's Antomy E12",1,0)
+oled.printBluLn("Q Gray's Antomy E12",1,0)
 oled.printBluLn("+3 Scorpion E10",2,0)
 oled.printBluLn("+4 Top Chef E02",3,0)
 oled.printYelLn("39C   148h 78%")
+
+oled.printBluLnBig("Test1",1,0)
+oled.printBluLnBig("Test2",2,0)
+oled.printBluLnBig("Test3",3,0)
+oled.printBluLnBig("Test4",3,0)
+
+oled.testDispFn()
 
 #time.sleep(20)
 #oled.cmdSetContrast(10)

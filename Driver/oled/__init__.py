@@ -34,3 +34,5 @@ from DisplayCommands import cmdSetPageAddr
 """ UserCommands exports """
 from UserCommands import printBluLn
 from UserCommands import printYelLn
+from UserCommands import printBluLnBig
+from UserCommands import testDispFn
